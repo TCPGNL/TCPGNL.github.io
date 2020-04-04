@@ -649,7 +649,28 @@
 
 
 
-  
+  <article class="post white-box comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 来来来,留下你的观点(~_~)</p>
+      
+      
+        <section id="comments">
+          <div id="disqus_thread">
+            <div><i class='fas fa-exclamation-triangle'></i>&nbsp;无法加载Disqus评论系统，请确保您的网络能够正常访问。</div>
+          </div>
+        </section>
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+    </section>
+  </article>
 
 
   
@@ -915,9 +936,53 @@ setInterval('createtime()',250);</script>
 
 
 
+  <script>
+    var disqus_shortname = 'tcpgnl';
+    
+      var disqus_url = 'https://www.tcpgnl.com/code-web.html';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
 
 
 
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.4/js/valine.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var notify = 'true' == 'true';
+  var verify = 'true' == 'true';
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    notify: notify,
+    verify: verify,
+    guest_info: guest_info,
+    
+    appId: "Oiy0LtDuJqmX0syC9VKS89Wq-MdYXbMMI",
+    appKey: "wy0V7recMNGgjaENqjtXhoke",
+    placeholder: "在这里留下你的足迹~~~",
+    pageSize:'10',
+    avatar:'mp',
+    lang:'zh-cn',
+    visitor: 'false',
+    highlight:'true'
+  })
+  </script>
 
 
 
