@@ -44,28 +44,6 @@
   </entry>
   
   <entry>
-    <title>Hello World</title>
-    <link href="https://www.tcpgnl.com/hello-world.html"/>
-    <id>https://www.tcpgnl.com/hello-world.html</id>
-    <published>2020-04-03T08:57:29.554Z</published>
-    <updated>2020-04-03T08:57:29.554Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>Springboot后端的JPA实现</title>
     <link href="https://www.tcpgnl.com/springboot-jpa.html"/>
     <id>https://www.tcpgnl.com/springboot-jpa.html</id>
@@ -281,9 +259,9 @@
       <category term="Docker" scheme="https://www.tcpgnl.com/categories/Docker/"/>
     
     
-      <category term="Bitnami" scheme="https://www.tcpgnl.com/tags/Bitnami/"/>
-    
       <category term="Docker" scheme="https://www.tcpgnl.com/tags/Docker/"/>
+    
+      <category term="Bitnami" scheme="https://www.tcpgnl.com/tags/Bitnami/"/>
     
   </entry>
   
@@ -536,6 +514,36 @@
     
     
       <category term="年度计划" scheme="https://www.tcpgnl.com/categories/%E5%B9%B4%E5%BA%A6%E8%AE%A1%E5%88%92/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>回顾2019</title>
+    <link href="https://www.tcpgnl.com/review-2019.html"/>
+    <id>https://www.tcpgnl.com/review-2019.html</id>
+    <published>2019-12-31T11:03:55.000Z</published>
+    <updated>2020-04-03T16:27:01.259Z</updated>
+    
+    <content type="html"><![CDATA[<p>2019感想:</p><blockquote><p>转眼间秋去冬来,时光荏苒,2019年已经过去,这一年有过多的感想与感思,打算在这最后一天好好总结一下,同时也为新年做准备.</p></blockquote><h1 id="2019年最后一天的网页"><a href="#2019年最后一天的网页" class="headerlink" title="2019年最后一天的网页"></a>2019年最后一天的网页</h1><p><img src="https://cdn.jsdelivr.net/gh/TCPGNL/my-storage/img/blog-2019-12-31.png" alt=""></p><h1 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h1><h2 id="所得"><a href="#所得" class="headerlink" title="所得"></a>所得</h2><p>这一年(2019)已经过去,</p><ol><li>向很多的人请教了很多问题(未来道路,人生,事务权衡),收获了很多新的认知.</li><li>这一年确定了自己的奋斗与目标(TCPGNL),使得自己的未来更加的清晰.</li><li>第一次将读书付诸于实践,完完全全的读完了一本书(未来世界的幸存者),看到了前辈们的远见和深思.</li><li>事情要提前做好,专注于待办任务,深刻的分析自身的能力,划定清晰的计划.</li><li>生产力可以适当借助外力提升,不要过于死板.</li><li>要提前提升自己的实力,在机会到来之前拥有抓住机会的能力.</li><li>认真对待当下,对于自己该拥有的事物,要牢牢抓住.</li><li>博学,专注,深思,知行合一.</li></ol><h2 id="所失"><a href="#所失" class="headerlink" title="所失"></a>所失</h2><ol><li>放弃了过多本应该拥有的东西,或因为实力不够,或因为规划不好.</li><li>将很多时间放在没有意义的事情上,浪费了过多的时间.</li><li>对于一些事情的态度不坚决,导致很多事情浪费过多的时间和精力.</li><li>事情做的不专注,导致同步事项两者出现了均不完美.</li><li>提前高估了事情的难度,导致拖延现象严重.</li><li>做事保持了太多的逢迎,造成时间和精力的浪费.</li><li>计划分割的不是很具体,且实现的进程出现问题,造成有些计划没有完成.<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1></li></ol><p>这一年是确定计划的一年,这一年也是认清自我的一年,这一年可以说过的很艰辛,放弃了很多本应该不能放弃的东西,浪费了很多不该浪费的时间,在不应该花时间的地方花费了太多时间,逢迎浪费了太多的时间,浪费了太多的精力,而且这种浪费造成的是一无所得.<br>在沉思之后,也有让自己所得的东西,对待当下要认真,要提前做好规划,提出待办事项,制定清晰的计划,认真的读完每本好书,对当下的事情要认识深刻,保持敏锐的观察力和深刻的见解,专注于right thing.提升实力,知行合一.<br>对新年的寄语:  </p><ol><li>认定对的事情就要去做,</li><li>不要考虑什么数字等无用的东西,</li><li>专注于正在做的事情,</li><li>将事情做成成品,有自己的最优解,</li><li>科学规划自己做的事情,将事项细分,</li><li>提高执行力,避免无效时间的浪费,</li><li>Time,Time,Time,Plan,Plan,Plan,Act,Act,Act!</li><li>对坚信事物矢志不渝.</li></ol><h1 id="今年最高兴的一件事"><a href="#今年最高兴的一件事" class="headerlink" title="今年最高兴的一件事"></a>今年最高兴的一件事</h1><p>没,今年没有任何一件事情,能让我高兴.</p><h1 id="今年最难过的一件事"><a href="#今年最难过的一件事" class="headerlink" title="今年最难过的一件事"></a>今年最难过的一件事</h1><p>没有对目标尽全力.</p><h1 id="年度关键词"><a href="#年度关键词" class="headerlink" title="年度关键词"></a>年度关键词</h1><p>今年的年度关键词为 撰刻<br>释义:今年的所有感知与感悟都已撰刻在历史的长河中,今年有或多或少的好和不好的事务都将消逝于历史,对于好的感知,要牢记深思,未来要多加强化,对于坏的感知,要坚决遗弃和反思,以后不可再出现.未来之光已经照亮,下一步,开启未来!</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;2019感想:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;转眼间秋去冬来,时光荏苒,2019年已经过去,这一年有过多的感想与感思,打算在这最后一天好好总结一下,同时也为新年做准备.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;2019年最后一天的网页&quot;&gt;&lt;a href
+      
+    
+    </summary>
+    
+    
+      <category term="年度报告" scheme="https://www.tcpgnl.com/categories/%E5%B9%B4%E5%BA%A6%E6%8A%A5%E5%91%8A/"/>
+    
+      <category term="感想" scheme="https://www.tcpgnl.com/categories/%E5%B9%B4%E5%BA%A6%E6%8A%A5%E5%91%8A/%E6%84%9F%E6%83%B3/"/>
     
     
   </entry>
