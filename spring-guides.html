@@ -1,0 +1,1634 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://volantis.js.org/#2.4.0'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+    <title>Spring Guides Spring 官方指南实现 - TCPGNL</title>
+  
+    <meta name="keywords" content="Spring">
+  
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/feed.xml" title="TCPGNL">
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css">
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+
+  
+
+  <!-- import link -->
+  
+
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+</head>
+
+<body>
+  
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+<header class="l_header shadow blur">
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h'>
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+          
+          
+          
+            TCPGNL
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  
+                    <i class='fas fa-rss fa-fw'></i>
+                  
+                  博客
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  
+                    <i class='fas fa-folder-open fa-fw'></i>
+                  
+                  分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  
+                    <i class='fas fa-tags fa-fw'></i>
+                  
+                  标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  
+                    <i class='fas fa-archive fa-fw'></i>
+                  
+                  归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  
+                    <i class='fas fa-link fa-fw'></i>
+                  
+                  友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  
+                    <i class='fas fa-info-circle fa-fw'></i>
+                  
+                  关于
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="搜索" />
+        </form>
+      </div>
+       
+     
+
+			<ul class='switcher nav-list-h'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  
+                    <i class='fas fa-rss fa-fw'></i>
+                  
+                  博客
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  
+                    <i class='fas fa-folder-open fa-fw'></i>
+                  
+                  分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  
+                    <i class='fas fa-tags fa-fw'></i>
+                  
+                  标签
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  
+                    <i class='fas fa-archive fa-fw'></i>
+                  
+                  归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  
+                    <i class='fas fa-link fa-fw'></i>
+                  
+                  友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  
+                    <i class='fas fa-info-circle fa-fw'></i>
+                  
+                  关于
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-147549842-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</header>
+
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box shadow article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/spring-guides.html">
+        Spring Guides Spring 官方指南实现
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+<div class='new-meta-item author'>
+  <a href="https://www.tcpgnl.com" rel="nofollow">
+    <img src="https://cdn.jsdelivr.net/gh/TCPGNL/my-storage/img/favicon.png">
+    <p>TCPGNL</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/Java/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>Java</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年3月9日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <h1 id="Spring-Guides"><a href="#Spring-Guides" class="headerlink" title="Spring-Guides"></a>Spring-Guides</h1><p> 这是Spring官方文档的实现</p>
+<h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>为了强化spring的学习和完成以前的spring项目,从3月10号起,每天做两个spring官方基础的指南,或者一个Topical Guides或者一个Tutorials<a href="https://spring.io/guides/#getting-started-guides" target="_blank" rel="noopener">https://spring.io/guides/#getting-started-guides</a></p>
+<h1 id="项目的形式"><a href="#项目的形式" class="headerlink" title="项目的形式"></a>项目的形式</h1><p>项目采用GitHub+bilibili的形式<br>GitHub地址: <a href="https://github.com/tcpgnl" target="_blank" rel="noopener">https://github.com/tcpgnl</a><br>bilibili地址: <a href="https://space.bilibili.com/472620361" target="_blank" rel="noopener">https://space.bilibili.com/472620361</a></p>
+<h1 id="时间安排"><a href="#时间安排" class="headerlink" title="时间安排"></a>时间安排</h1><h2 id="第一部分-Getting-Started-Guides-15-30分钟"><a href="#第一部分-Getting-Started-Guides-15-30分钟" class="headerlink" title="第一部分 Getting Started Guides (15-30分钟)"></a>第一部分 Getting Started Guides (15-30分钟)</h2><table>
+<thead>
+<tr>
+<th align="left">序号</th>
+<th align="left">题目</th>
+<th align="left">GitHub地址</th>
+<th align="left">bilibili地址</th>
+<th align="left">预期完成时间</th>
+<th align="left">最终完成时间</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1</td>
+<td align="left"><a href="https://spring.io/guides/gs/rest-service/" target="_blank" rel="noopener">Building a RESTful Web Service</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3-10</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left"><a href="https://spring.io/guides/gs/scheduling-tasks/" target="_blank" rel="noopener">Scheduling Tasks</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3-10</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left"><a href="https://spring.io/guides/gs/consuming-rest/" target="_blank" rel="noopener">Consuming a RESTful Web Service</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3-11</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left"><a href="https://spring.io/guides/gs/gradle/" target="_blank" rel="noopener">Building Java Projects with Gradle</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3-11</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left"><a href="https://spring.io/guides/gs/maven/" target="_blank" rel="noopener">Building Java Projects with Maven</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3-12</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">6</td>
+<td align="left"><a href="https://spring.io/guides/gs/relational-data-access/" target="_blank" rel="noopener">Accessing Relational Data using JDBC with Spring</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3-12</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">7</td>
+<td align="left"><a href="https://spring.io/guides/gs/uploading-files/" target="_blank" rel="noopener">Uploading Files</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3-13</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">8</td>
+<td align="left"><a href="https://spring.io/guides/gs/authenticating-ldap/" target="_blank" rel="noopener">Authenticating a User with LDAP</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3-13</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">9</td>
+<td align="left"><a href="https://spring.io/guides/gs/messaging-redis/" target="_blank" rel="noopener">Messaging with Redis</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3-14</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">10</td>
+<td align="left"><a href="https://spring.io/guides/gs/messaging-rabbitmq/" target="_blank" rel="noopener">Messaging with RabbitMQ</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3-14</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">11</td>
+<td align="left"><a href="https://spring.io/guides/gs/accessing-data-neo4j/" target="_blank" rel="noopener">Accessing Data with Neo4j</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3-15</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">12</td>
+<td align="left"><a href="https://spring.io/guides/gs/validating-form-input/" target="_blank" rel="noopener">Validating Form Input</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3-15</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">13</td>
+<td align="left"><a href="https://spring.io/guides/gs/actuator-service/" target="_blank" rel="noopener">Building a RESTful Web Service with Spring Boot Actuator</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3-16</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">14</td>
+<td align="left"><a href="https://spring.io/guides/gs/messaging-jms/" target="_blank" rel="noopener">Messaging with JMS</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3-16</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">15</td>
+<td align="left"><a href="https://spring.io/guides/gs/batch-processing/" target="_blank" rel="noopener">Creating a Batch Service</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3-17</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">16</td>
+<td align="left"><a href="https://spring.io/guides/gs/securing-web/" target="_blank" rel="noopener">Securing a Web Application</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3-17</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">17</td>
+<td align="left"><a href="https://spring.io/guides/gs/rest-hateoas/" target="_blank" rel="noopener">Building a Hypermedia-Driven RESTful Web Service</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3-18</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">18</td>
+<td align="left"><a href="https://spring.io/guides/gs/accessing-data-gemfire/" target="_blank" rel="noopener">Accessing Data in Pivotal GemFire</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3-18</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">19</td>
+<td align="left"><a href="https://spring.io/guides/gs/integration/" target="_blank" rel="noopener">Integrating Data</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3-19</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">20</td>
+<td align="left"><a href="https://spring.io/guides/gs/caching-gemfire/" target="_blank" rel="noopener">Caching Data with Pivotal GemFire</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3-19</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">21</td>
+<td align="left"><a href="https://spring.io/guides/gs/managing-transactions/" target="_blank" rel="noopener">Managing Transactions</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3-20</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">22</td>
+<td align="left"><a href="https://spring.io/guides/gs/accessing-data-jpa/" target="_blank" rel="noopener">Accessing Data with JPA</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3-20</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">23</td>
+<td align="left"><a href="https://spring.io/guides/gs/accessing-data-mongodb/" target="_blank" rel="noopener">Accessing Data with MongoDB</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3-21</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">24</td>
+<td align="left"><a href="https://spring.io/guides/gs/serving-web-content/" target="_blank" rel="noopener">Serving Web Content with Spring MVC</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3-21</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">25</td>
+<td align="left"><a href="https://spring.io/guides/gs/convert-jar-to-war/" target="_blank" rel="noopener">Converting a Spring Boot JAR Application to a WAR</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3-22</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">26</td>
+<td align="left"><a href="https://spring.io/guides/gs/async-method/" target="_blank" rel="noopener">Creating Asynchronous Methods</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3-22</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">27</td>
+<td align="left"><a href="https://spring.io/guides/gs/handling-form-submission/" target="_blank" rel="noopener">Handling Form Submission</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3-23</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">28</td>
+<td align="left"><a href="https://spring.io/guides/gs/spring-boot/" target="_blank" rel="noopener">Building an Application with Spring Boot</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3-23</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">29</td>
+<td align="left"><a href="https://spring.io/guides/gs/messaging-stomp-websocket/" target="_blank" rel="noopener">Using WebSocket to build an interactive web application</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3-24</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">30</td>
+<td align="left"><a href="https://spring.io/guides/gs/sts/" target="_blank" rel="noopener">Working a Getting Started guide with STS</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3-24</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">31</td>
+<td align="left"><a href="https://spring.io/guides/gs/consuming-rest-angularjs/" target="_blank" rel="noopener">Consuming a RESTful Web Service with AngularJS</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3-25</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">32</td>
+<td align="left"><a href="https://spring.io/guides/gs/consuming-rest-restjs/" target="_blank" rel="noopener">Consuming a RESTful Web Service with rest.js</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3-25</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">33</td>
+<td align="left"><a href="https://spring.io/guides/gs/consuming-rest-jquery/" target="_blank" rel="noopener">Consuming a RESTful Web Service with jQuery</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3-26</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">34</td>
+<td align="left"><a href="https://spring.io/guides/gs/rest-service-cors/" target="_blank" rel="noopener">Enabling Cross Origin Requests for a RESTful Web Service</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3-26</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">35</td>
+<td align="left"><a href="https://spring.io/guides/gs/consuming-web-service/" target="_blank" rel="noopener">Consuming a SOAP web service</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3-27</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">36</td>
+<td align="left"><a href="https://spring.io/guides/gs/accessing-data-rest/" target="_blank" rel="noopener">Accessing JPA Data with REST</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3-27</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">37</td>
+<td align="left"><a href="https://spring.io/guides/gs/accessing-neo4j-data-rest/" target="_blank" rel="noopener">Accessing Neo4j Data with REST</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3-28</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">38</td>
+<td align="left"><a href="https://spring.io/guides/gs/accessing-mongodb-data-rest/" target="_blank" rel="noopener">Accessing MongoDB Data with REST</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3-28</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">39</td>
+<td align="left"><a href="https://spring.io/guides/gs/accessing-gemfire-data-rest/" target="_blank" rel="noopener">Accessing Data in Pivotal GemFire with REST</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3-29</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">40</td>
+<td align="left"><a href="https://spring.io/guides/gs/producing-web-service/" target="_blank" rel="noopener">Producing a SOAP web service</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3-29</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">41</td>
+<td align="left"><a href="https://spring.io/guides/gs/caching/" target="_blank" rel="noopener">Caching Data with Spring</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3-30</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">42</td>
+<td align="left"><a href="https://spring.io/guides/gs/sts-cloud-foundry-deployment/" target="_blank" rel="noopener">Deploying to Cloud Foundry from STS</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3-30</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">43</td>
+<td align="left"><a href="https://spring.io/guides/gs/spring-boot-docker/" target="_blank" rel="noopener">Spring Boot with Docker</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3-31</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">44</td>
+<td align="left"><a href="https://spring.io/guides/gs/intellij-idea/" target="_blank" rel="noopener">Working a Getting Started guide with IntelliJ IDEA</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3-31</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">45</td>
+<td align="left"><a href="https://spring.io/guides/gs/crud-with-vaadin/" target="_blank" rel="noopener">Creating CRUD UI with Vaadin</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">4-1</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">46</td>
+<td align="left"><a href="https://spring.io/guides/gs/service-registration-and-discovery/" target="_blank" rel="noopener">Service Registration and Discovery</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">4-1</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">47</td>
+<td align="left"><a href="https://spring.io/guides/gs/centralized-configuration/" target="_blank" rel="noopener">Centralized Configuration</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">4-2</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">48</td>
+<td align="left"><a href="https://spring.io/guides/gs/routing-and-filtering/" target="_blank" rel="noopener">Routing and Filtering</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">4-2</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">49</td>
+<td align="left"><a href="https://spring.io/guides/gs/circuit-breaker/" target="_blank" rel="noopener">Circuit Breaker</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">4-3</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">50</td>
+<td align="left"><a href="https://spring.io/guides/gs/client-side-load-balancing/" target="_blank" rel="noopener">Client Side Load Balancing with Ribbon and Spring Cloud</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">4-3</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">51</td>
+<td align="left"><a href="https://spring.io/guides/gs/testing-web/" target="_blank" rel="noopener">Testing the Web Layer</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">4-4</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">52</td>
+<td align="left"><a href="https://spring.io/guides/gs/accessing-data-mysql/" target="_blank" rel="noopener">Accessing data with MySQL</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">4-4</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">53</td>
+<td align="left"><a href="https://spring.io/guides/gs/multi-module/" target="_blank" rel="noopener">Creating a Multi Module Project</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">4-5</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">54</td>
+<td align="left"><a href="https://spring.io/guides/gs/testing-restdocs/" target="_blank" rel="noopener">Creating API Documentation with Restdocs</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">4-5</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">55</td>
+<td align="left"><a href="https://spring.io/guides/gs/messaging-gcp-pubsub/" target="_blank" rel="noopener">Messaging with Google Cloud Pub/Sub</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">4-6</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">56</td>
+<td align="left"><a href="https://spring.io/guides/gs/reactive-rest-service/" target="_blank" rel="noopener">Building a Reactive RESTful Web Service</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">4-6</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">57</td>
+<td align="left"><a href="https://spring.io/guides/gs/contract-rest/" target="_blank" rel="noopener">Consumer Driven Contracts</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">4-7</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">58</td>
+<td align="left"><a href="https://spring.io/guides/gs/accessing-vault/" target="_blank" rel="noopener">Accessing Vault</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">4-7</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">59</td>
+<td align="left"><a href="https://spring.io/guides/gs/vault-config/" target="_blank" rel="noopener">Vault Configuration</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">4-8</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">60</td>
+<td align="left"><a href="https://spring.io/guides/gs/spring-data-reactive-redis/" target="_blank" rel="noopener">Accessing Data Reactively with Redis</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">4-8</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">61</td>
+<td align="left"><a href="https://spring.io/guides/gs/spring-boot-for-azure/" target="_blank" rel="noopener">Deploying a Spring Boot app to Azure</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">4-9</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">62</td>
+<td align="left"><a href="https://spring.io/guides/gs/gateway/" target="_blank" rel="noopener">Building a Gateway</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">4-9</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">63</td>
+<td align="left"><a href="https://spring.io/guides/gs/spring-cloud-loadbalancer/" target="_blank" rel="noopener">Client-Side Load-Balancing with Spring Cloud LoadBalancer</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">4-10</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">64</td>
+<td align="left"><a href="https://spring.io/guides/gs/spring-cloud-stream/" target="_blank" rel="noopener">Spring Cloud Stream</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">4-10</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">65</td>
+<td align="left"><a href="https://spring.io/guides/gs/spring-cloud-dataflow/" target="_blank" rel="noopener">Spring Cloud Data Flow</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">4-11</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">66</td>
+<td align="left"><a href="https://spring.io/guides/gs/spring-cloud-task/" target="_blank" rel="noopener">Spring Cloud Task</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">4-11</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">67</td>
+<td align="left"><a href="https://spring.io/guides/gs/spring-boot-kubernetes/" target="_blank" rel="noopener">Spring Boot Kubernetes</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">4-12</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">68</td>
+<td align="left"><a href="https://spring.io/guides/gs/accessing-data-r2dbc/" target="_blank" rel="noopener">Accessing data with R2DBC</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">4-12</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">69</td>
+<td align="left"><a href="https://spring.io/guides/gs/cloud-circuit-breaker/" target="_blank" rel="noopener">Spring Cloud Circuit Breaker Guide</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">4-13</td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<h2 id="第二部分-Topical-Guides-lt-60分钟"><a href="#第二部分-Topical-Guides-lt-60分钟" class="headerlink" title="第二部分 Topical Guides (&lt;60分钟)"></a>第二部分 Topical Guides (&lt;60分钟)</h2><table>
+<thead>
+<tr>
+<th>序号</th>
+<th align="left">题目</th>
+<th align="left">GitHub地址</th>
+<th align="left">bilibili地址</th>
+<th align="left">预期完成时间</th>
+<th align="left">最终完成时间</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td align="left"><a href="https://spring.io/guides/topicals/spring-security-architecture/" target="_blank" rel="noopener">Spring Security Architecture</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">4-13</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td>2</td>
+<td align="left"><a href="https://spring.io/guides/topicals/spring-boot-docker/" target="_blank" rel="noopener">Spring Boot Docker</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">4-14</td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<h2 id="第三部分-Tutorials-2-3小时"><a href="#第三部分-Tutorials-2-3小时" class="headerlink" title="第三部分 Tutorials (2-3小时)"></a>第三部分 Tutorials (2-3小时)</h2><table>
+<thead>
+<tr>
+<th>序号</th>
+<th align="left">题目</th>
+<th align="left">GitHub地址</th>
+<th align="left">bilibili地址</th>
+<th align="left">预期完成时间</th>
+<th align="left">最终完成时间</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td align="left"><a href="https://spring.io/guides/tutorials/rest/" target="_blank" rel="noopener">Building REST services with Spring</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">4-15</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td>2</td>
+<td align="left"><a href="https://spring.io/guides/tutorials/spring-security-and-angular-js/" target="_blank" rel="noopener">Spring Security and Angular</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">4-16</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td>3</td>
+<td align="left"><a href="https://spring.io/guides/tutorials/react-and-spring-data-rest/" target="_blank" rel="noopener">React.js and Spring Data REST</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">4-17</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td>4</td>
+<td align="left"><a href="https://spring.io/guides/tutorials/spring-boot-oauth2/" target="_blank" rel="noopener">Spring Boot and OAuth2</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">4-18</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td>5</td>
+<td align="left"><a href="https://spring.io/guides/tutorials/spring-boot-kotlin/" target="_blank" rel="noopener">Building web applications with Spring Boot and Kotlin</a></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">4-19</td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+
+          
+            <br>
+            
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=https://www.tcpgnl.com/spring-guides.html>https://www.tcpgnl.com/spring-guides.html</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget qrcode  desktop mobile">
+  
+
+  <div class='content article-entry'>
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/TCPGNL/my-storage/img/wxpay-qr.png'
+        
+          height='200px'
+        ></div>
+      
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/TCPGNL/my-storage/img/alipay-qr.png'
+        
+          height='200px'
+        ></div>
+      
+    
+  </div>
+</section>
+
+  
+
+
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-04-03T23:04:04+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2020年4月3日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Spring/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Spring</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.tcpgnl.com/spring-guides.html&title=Spring Guides Spring 官方指南实现 - TCPGNL&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://www.tcpgnl.com/spring-guides.html&title=Spring Guides Spring 官方指南实现 - TCPGNL&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://www.tcpgnl.com/spring-guides.html&title=Spring Guides Spring 官方指南实现 - TCPGNL&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/my-dream-company.html'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>我理想中的公司是什么样子的?</p>
+                <p class='content'>我梦想中的公司是什么样子的呢
+以提高客户的生活品质为追求
+以不打倒某一家公司为目标因为一旦树立标杆,就只为了目的性,而忽略公司的本质
+可以为员工提供良好的学习环境
+不以压榨员工的剩余价值为骄傲
+...</p>
+              </a>
+            
+            
+              <a class='next' href='/nodejs-install.html'>
+                <p class='title'>nodejs centos安装教程<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>前因express 真轻量,用它做API应该比较方便,比springboot应该轻量的多,javascript 咱也会一部分,一次你记录下nodejs在centos安装教程,为啥选centos呢...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'Spring Guides Spring 官方指南实现',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+  
+
+  
+    
+    
+
+
+  <section class="widget toc-wrapper shadow desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一部分-Getting-Started-Guides-15-30分钟"><span class="toc-text">第一部分 Getting Started Guides (15-30分钟)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第二部分-Topical-Guides-lt-60分钟"><span class="toc-text">第二部分 Topical Guides (&lt;60分钟)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第三部分-Tutorials-2-3小时"><span class="toc-text">第三部分 Tutorials (2-3小时)</span></a></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+  
+  <footer class="clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="/feed.xml"
+                class="social fas fa-rss flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="mailto:i@tcpgnl.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/tcpgnl"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        本站使用
+        <a href="https://volantis.js.org/" target="_blank" class="codename">volantis</a>
+        作为主题
+        
+          ，
+          总访问量为
+          <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+          次
+        
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="https://www.tcpgnl.com">Copyright © 2019-2020 TCPGNL</a></p>
+
+        </div>
+      
+    
+      
+        <div class="spend_time">
+          已在风雨中度过<span id="spend_time" ></span>
+        </div>
+      
+    
+  </footer>
+
+<script>setLoadingBarProgress(80);</script>
+<script>
+  function secondToDate(second) {
+      if (!second) {
+          return 0;
+      }
+      var time = new Array(0, 0, 0, 0, 0);
+      if (second >= 365 * 24 * 3600) {
+          time[0] = parseInt(second / (365 * 24 * 3600));
+          second %= 365 * 24 * 3600;
+      }
+      if (second >= 24 * 3600) {
+          time[1] = parseInt(second / (24 * 3600));
+          second %= 24 * 3600;
+      }
+      if (second >= 3600) {
+          time[2] = parseInt(second / 3600);
+          second %= 3600;
+      }
+      if (second >= 60) {
+          time[3] = parseInt(second / 60);
+          second %= 60;
+      }
+      if (second > 0) {
+          time[4] = second;
+      }
+      return time;
+  }</script><script type="text/javascript" language="javascript">
+  // function setTime() {
+  //     var create_time = Math.round(new Date(Date.UTC(2019, 09, 10, 0, 0, 0)).getTime() / 1000);
+  //     var timestamp = Math.round((new Date().getTime() + 8 * 60 * 60 * 1000) / 1000);
+  //     currentTime = secondToDate((timestamp - create_time));
+  //     currentTimeHtml = currentTime[0] + '年' + currentTime[1] + '天'
+  //             + currentTime[2] + '时' + currentTime[3] + '分' + currentTime[4]
+  //             + '秒';
+  //     document.getElementById("spend_time").innerHTML = currentTimeHtml;
+  // }    setInterval(setTime, 1000);
+  
+ var now = new Date();
+function createtime(){
+    var grt = new Date("09\/10\/2019 00:00:00");
+    now.setTime(now.getTime()+250);
+    days = (now-grt)/1000/60/60/24;dnum = Math.floor(days);
+    hours = (now-grt)/1000/60/60-(24*dnum);hnum = Math.floor(hours);
+    if(String(hnum).length==1){hnum = '0'+hnum;}
+    minutes = (now-grt)/1000/60-(24*60*dnum)-(60*hnum);mnum = Math.floor(minutes);
+    if(String(mnum).length==1){mnum = '0'+mnum;}
+    seconds = (now-grt)/1000-(24*60*60*dnum)-(60*60*hnum)-(60*mnum);snum = Math.round(seconds);
+    if(String(snum).length==1){snum = '0'+snum;}
+    document.getElementById('spend_time').innerHTML = dnum+'天'+hnum+'小时'+mnum+'分'+snum+'秒';
+}
+setInterval('createtime()',250);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/41F215B9-261F-48B4-80B5-4E86E165259E.jpeg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('.cover') {
+          $('.cover').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.4/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-clipboard-check');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-exclamation-triangle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+
+
+<!-- fancybox -->
+
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("div.fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>
