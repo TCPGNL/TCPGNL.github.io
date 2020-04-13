@@ -1,764 +1,117 @@
-<!DOCTYPE html>
-<html>
-<head hexo-theme='https://volantis.js.org/#2.4.0'>
-  <meta charset="utf-8">
-  <!-- SEO相关 -->
-  
-    
-  
-  <!-- 渲染优化 -->
-  <meta name="renderer" content="webkit">
-  <meta name="force-rendering" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-  <meta name="HandheldFriendly" content="True" >
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>所有标签 | TCPGNL</title><meta name="description" content="所有标签"><meta name="keywords" content="TCPGNL,效率,全栈工程师"><meta name="author" content="TCPGNL"><meta name="copyright" content="TCPGNL"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/TCPGNL/my-storage/img/favicon.png"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://www.google-analytics.com" crossorigin="crossorigin"/><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="twitter:card" content="summary"><meta name="twitter:title" content="所有标签"><meta name="twitter:description" content="所有标签"><meta name="twitter:image" content="https://www.tcpgnl.com/img/post.jpg"><meta property="og:type" content="website"><meta property="og:title" content="所有标签"><meta property="og:url" content="https://www.tcpgnl.com/tags/"><meta property="og:site_name" content="TCPGNL"><meta property="og:description" content="所有标签"><meta property="og:image" content="https://www.tcpgnl.com/img/post.jpg"><meta property="article:published_time" content="2019-09-09T16:00:00.000Z"><meta property="article:modified_time" content="2020-04-13T08:36:13.287Z"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>var autoChangeMode = '1'
+var t = Cookies.get("theme")
+if (autoChangeMode == '1'){
+  var isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+  var isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
+  var isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
 
-  <!-- 页面元数据 -->
-  
-    <title>所有标签 - TCPGNL</title>
-  
-  
+  if (t === undefined){
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport){
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour < 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+  }
+  } else if (t == 'light') activateLightMode()
+  else activateDarkMode()
 
-  <!-- feed -->
-  
-    <link rel="alternate" href="/feed.xml" title="TCPGNL">
-  
-
-  <!-- import meta -->
-  
-
-  <!-- link -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css">
-  
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
-
-  
-  
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
-
-  
-
-  
-
-  
-
-  <!-- import link -->
-  
-
-  
-    
-<link rel="stylesheet" href="/css/style.css">
-
-  
-
-  <script>
-    function setLoadingBarProgress(num) {
-      document.getElementById('loading-bar').style.width=num+"%";
-    }
-  </script>
-
-  
-  
-</head>
-
-<body>
-  
-  <div id="loading-bar-wrapper">
-  <div id="loading-bar"></div>
-</div>
-<header class="l_header shadow blur">
-  <div class='container'>
-  <div class='wrapper'>
-    <div class='nav-sub'>
-      <p class="title"></p>
-      <ul class='switcher nav-list-h'>
-        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
-        
-          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
-        
-      </ul>
-    </div>
-		<div class="nav-main">
-      
-        
-        <a class="title flat-box" target="_self" href='/'>
-          
-          
-          
-          
-            TCPGNL
-          
-        </a>
-      
-
-			<div class='menu navigation'>
-				<ul class='nav-list-h'>
-          
-          
-          
-            
-            
-              <li>
-                <a class="flat-box" href=/
-                  
-                  
-                  
-                    id="home"
-                  >
-                  
-                    <i class='fas fa-rss fa-fw'></i>
-                  
-                  博客
-                </a>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
-                <a class="flat-box" href=/categories/
-                  
-                  
-                  
-                    id="categories"
-                  >
-                  
-                    <i class='fas fa-folder-open fa-fw'></i>
-                  
-                  分类
-                </a>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
-                <a class="flat-box" href=/tags/
-                  
-                  
-                  
-                    id="tags"
-                  >
-                  
-                    <i class='fas fa-tags fa-fw'></i>
-                  
-                  标签
-                </a>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
-                <a class="flat-box" href=/archives/
-                  
-                  
-                  
-                    id="archives"
-                  >
-                  
-                    <i class='fas fa-archive fa-fw'></i>
-                  
-                  归档
-                </a>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
-                <a class="flat-box" href=/friends/
-                  
-                  
-                  
-                    id="friends"
-                  >
-                  
-                    <i class='fas fa-link fa-fw'></i>
-                  
-                  友链
-                </a>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
-                <a class="flat-box" href=/donate/
-                  
-                  
-                  
-                    id="donate"
-                  >
-                  
-                    <i class='fa fa-heart fa-fw'></i>
-                  
-                  赞助
-                </a>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
-                <a class="flat-box" href=/about/
-                  
-                  
-                  
-                    id="about"
-                  >
-                  
-                    <i class='fas fa-info-circle fa-fw'></i>
-                  
-                  关于
-                </a>
-                
-              </li>
-            
-          
-          
-				</ul>
-			</div>
-
-      <div class="m_search">
-        <form name="searchform" class="form u-search-form">
-          <i class="icon fas fa-search fa-fw"></i>
-          <input type="text" class="input u-search-input" placeholder="搜索" />
-        </form>
-      </div>
-       
-     
-
-			<ul class='switcher nav-list-h'>
-				
-					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
-				
-				<li>
-          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
-          <ul class="menu-phone list-v navigation white-box">
-            
-              
-            
-              <li>
-                <a class="flat-box" href=/
-                  
-                  
-                  
-                    id="home"
-                  >
-                  
-                    <i class='fas fa-rss fa-fw'></i>
-                  
-                  博客
-                </a>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="flat-box" href=/categories/
-                  
-                  
-                  
-                    id="categories"
-                  >
-                  
-                    <i class='fas fa-folder-open fa-fw'></i>
-                  
-                  分类
-                </a>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="flat-box" href=/tags/
-                  
-                  
-                  
-                    id="tags"
-                  >
-                  
-                    <i class='fas fa-tags fa-fw'></i>
-                  
-                  标签
-                </a>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="flat-box" href=/archives/
-                  
-                  
-                  
-                    id="archives"
-                  >
-                  
-                    <i class='fas fa-archive fa-fw'></i>
-                  
-                  归档
-                </a>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="flat-box" href=/friends/
-                  
-                  
-                  
-                    id="friends"
-                  >
-                  
-                    <i class='fas fa-link fa-fw'></i>
-                  
-                  友链
-                </a>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="flat-box" href=/donate/
-                  
-                  
-                  
-                    id="donate"
-                  >
-                  
-                    <i class='fa fa-heart fa-fw'></i>
-                  
-                  赞助
-                </a>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="flat-box" href=/about/
-                  
-                  
-                  
-                    id="about"
-                  >
-                  
-                    <i class='fas fa-info-circle fa-fw'></i>
-                  
-                  关于
-                </a>
-                
-              </li>
-            
-          
-            
-          </ul>
-        </li>
-			</ul>
-		</div>
-	</div>
-  </div>
-  
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-147549842-1', 'auto');
-  ga('send', 'pageview');
-</script>
-
-</header>
-
-<script>setLoadingBarProgress(40);</script>
-
-
-
-
-
-  <div class="l_body nocover">
-    <div class='body-wrapper'>
-      
-
-
-<div class='l_main'>
-  
-    
-      <section class="post-list ">
-        <div class='post-wrapper'>
-          <article id="archive-page" class="post article white-box shadow">
-            <section class="archive">
-              <div class="archive-item archive-year mark">
-                <h2>所有标签</h2>
-              </div>
-              <div class="archive-item all-tags">
-                
-                <a href="/tags/API/" style="font-size: 14px; color: #999">API</a> <a href="/tags/Bitnami/" style="font-size: 14px; color: #999">Bitnami</a> <a href="/tags/Docker/" style="font-size: 19px; color: #777">Docker</a> <a href="/tags/Docker-Java-SpringBoot/" style="font-size: 14px; color: #999">Docker,Java,SpringBoot</a> <a href="/tags/JPA/" style="font-size: 14px; color: #999">JPA</a> <a href="/tags/Java/" style="font-size: 24px; color: #555">Java</a> <a href="/tags/Spring/" style="font-size: 19px; color: #777">Spring</a> <a href="/tags/SpringBoot/" style="font-size: 24px; color: #555">SpringBoot</a> <a href="/tags/bitwarden/" style="font-size: 14px; color: #999">bitwarden</a> <a href="/tags/cURL/" style="font-size: 14px; color: #999">cURL</a> <a href="/tags/telegram/" style="font-size: 14px; color: #999">telegram</a> <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 14px; color: #999">博客</a> <a href="/tags/%E5%AE%89%E5%85%A8/" style="font-size: 14px; color: #999">安全</a> <a href="/tags/%E8%87%AA%E5%BB%BA/" style="font-size: 14px; color: #999">自建</a>
-              </div>
-              <br>
-              
-            </section>
-          </article>
-        </div>
-      </section>
-    
-  
-</div>
-<aside class='l_side'>
-  
-  
-
-  
-    
-    
-
-
-
-  
-
-
-</aside>
-
-
-  
-  <footer class="clearfix">
-    <br><br>
-    
-      
-        <div class="aplayer-container">
-          
-
-
-        </div>
-      
-    
-      
-        <br>
-        <div class="social-wrapper">
-          
-            
-              <a href="/feed.xml"
-                class="social fas fa-rss flat-btn"
-                target="_blank"
-                rel="external nofollow noopener noreferrer">
-              </a>
-            
-          
-            
-              <a href="mailto:i@tcpgnl.com"
-                class="social fas fa-envelope flat-btn"
-                target="_blank"
-                rel="external nofollow noopener noreferrer">
-              </a>
-            
-          
-            
-              <a href="https://github.com/tcpgnl"
-                class="social fab fa-github flat-btn"
-                target="_blank"
-                rel="external nofollow noopener noreferrer">
-              </a>
-            
-          
-        </div>
-      
-    
-      
-        <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
-</div>
-      
-    
-      
-        本站使用
-        <a href="https://volantis.js.org/" target="_blank" class="codename">volantis</a>
-        作为主题
-        
-          ，
-          总访问量为
-          <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
-          次
-        
-      
-    
-      
-        <div class='copyright'>
-        <p><a href="https://www.tcpgnl.com">Copyright © 2019-2020 TCPGNL</a></p>
-
-        </div>
-      
-    
-      
-        <div class="spend_time">
-          已在风雨中度过<span id="spend_time" ></span>
-        </div>
-      
-    
-  </footer>
-
-<script>setLoadingBarProgress(80);</script>
-<script>
-  function secondToDate(second) {
-      if (!second) {
-          return 0;
-      }
-      var time = new Array(0, 0, 0, 0, 0);
-      if (second >= 365 * 24 * 3600) {
-          time[0] = parseInt(second / (365 * 24 * 3600));
-          second %= 365 * 24 * 3600;
-      }
-      if (second >= 24 * 3600) {
-          time[1] = parseInt(second / (24 * 3600));
-          second %= 24 * 3600;
-      }
-      if (second >= 3600) {
-          time[2] = parseInt(second / 3600);
-          second %= 3600;
-      }
-      if (second >= 60) {
-          time[3] = parseInt(second / 60);
-          second %= 60;
-      }
-      if (second > 0) {
-          time[4] = second;
-      }
-      return time;
-  }</script><script type="text/javascript" language="javascript">
-  // function setTime() {
-  //     var create_time = Math.round(new Date(Date.UTC(2019, 09, 10, 0, 0, 0)).getTime() / 1000);
-  //     var timestamp = Math.round((new Date().getTime() + 8 * 60 * 60 * 1000) / 1000);
-  //     currentTime = secondToDate((timestamp - create_time));
-  //     currentTimeHtml = currentTime[0] + '年' + currentTime[1] + '天'
-  //             + currentTime[2] + '时' + currentTime[3] + '分' + currentTime[4]
-  //             + '秒';
-  //     document.getElementById("spend_time").innerHTML = currentTimeHtml;
-  // }    setInterval(setTime, 1000);
-  
- var now = new Date();
-function createtime(){
-    var grt = new Date("09\/10\/2019 00:00:00");
-    now.setTime(now.getTime()+250);
-    days = (now-grt)/1000/60/60/24;dnum = Math.floor(days);
-    hours = (now-grt)/1000/60/60-(24*dnum);hnum = Math.floor(hours);
-    if(String(hnum).length==1){hnum = '0'+hnum;}
-    minutes = (now-grt)/1000/60-(24*60*dnum)-(60*hnum);mnum = Math.floor(minutes);
-    if(String(mnum).length==1){mnum = '0'+mnum;}
-    seconds = (now-grt)/1000-(24*60*60*dnum)-(60*60*hnum)-(60*mnum);snum = Math.round(seconds);
-    if(String(snum).length==1){snum = '0'+snum;}
-    document.getElementById('spend_time').innerHTML = dnum+'天'+hnum+'小时'+mnum+'分'+snum+'秒';
+} else if (autoChangeMode == '2'){
+  now = new Date();
+  hour = now.getHours();
+  isNight = hour < 6 || hour >= 18
+  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode() 
+} else {
+  if ( t == 'dark' ) activateDarkMode()
+  else if ( t == 'light') activateLightMode()
 }
-setInterval('createtime()',250);</script>
 
+function activateDarkMode(){
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
+  }
+}
+function activateLightMode(){
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
+  }
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="canonical" href="https://www.tcpgnl.com/tags/"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-
-      <script>setLoadingBarProgress(60);</script>
-    </div>
-    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
-  </div>
+ga('create', 'UA-147549842-1', 'auto');
+ga('send', 'pageview');
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://www.tcpgnl.com/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: {"languages":{"author":"作者: TCPGNL","link":"链接: ","source":"来源: TCPGNL","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  baiduPush: true,
+  highlightCopy: true,
+  highlightLang: true,
+  highlightShrink: 'false',
+  isFontAwesomeV5: false,
+  isPhotoFigcaption: false
   
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: false,
+  isSidebar: false  
+  }</script><noscript><style>
+#page-header {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/feed.xml" title="TCPGNL" type="application/atom+xml">
+</head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="https://cdn.jsdelivr.net/gh/TCPGNL/my-storage/img/favicon.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">28</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">14</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">13</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/friends/"><i class="fa-fw fa fa-link"></i><span> friends</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/Donate/"><i class="fa-fw fa fa-money"></i><span> Donate</span></a></div></div></div></div><div id="body-wrap"><div class="not-index-bg" id="nav" style="background-image: url(/img/index.jpg)"><div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">TCPGNL</a></span><span class="pull_right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fa fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/friends/"><i class="fa-fw fa fa-link"></i><span> friends</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/Donate/"><i class="fa-fw fa fa-money"></i><span> Donate</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span></span></div><div id="page_site-info"><h1 id="site_title">所有标签</h1></div></div><main class="layout_page" id="content-inner"><div class="tag-cloud"><div class="tag-cloud__title">标签 - <span class="tag-cloud__amount">14</span></div><div class="tag-cloud-tags"><a href="/tags/API/" style="font-size:20px;color:rgb(67, 81, 143)">API</a><a href="/tags/Bitnami/" style="font-size:18px;color:rgb(65, 33, 90)">Bitnami</a><a href="/tags/Docker-Java-SpringBoot/" style="font-size:28px;color:rgb(116, 198, 6)">Docker,Java,SpringBoot</a><a href="/tags/Docker/" style="font-size:29px;color:rgb(185, 194, 156)">Docker</a><a href="/tags/JPA/" style="font-size:20px;color:rgb(143, 50, 112)">JPA</a><a href="/tags/Java/" style="font-size:24px;color:rgb(136, 38, 89)">Java</a><a href="/tags/Spring/" style="font-size:28px;color:rgb(51, 144, 111)">Spring</a><a href="/tags/SpringBoot/" style="font-size:24px;color:rgb(30, 24, 147)">SpringBoot</a><a href="/tags/bitwarden/" style="font-size:22px;color:rgb(112, 118, 195)">bitwarden</a><a href="/tags/cURL/" style="font-size:22px;color:rgb(25, 104, 172)">cURL</a><a href="/tags/telegram/" style="font-size:17px;color:rgb(17, 187, 18)">telegram</a><a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size:17px;color:rgb(64, 197, 38)">博客</a><a href="/tags/%E5%AE%89%E5%85%A8/" style="font-size:15px;color:rgb(78, 127, 124)">安全</a><a href="/tags/%E8%87%AA%E5%BB%BA/" style="font-size:21px;color:rgb(56, 89, 138)">自建</a></div><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 评论</span></div><div class="vcomment" id="vcomment"></div><script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script><script>var GUEST_INFO = ['nick','mail','link'];
+var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+  return GUEST_INFO.indexOf(item) > -1
+});
+guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
 
-
-  <script>
-    
-    var SEARCH_SERVICE = "hexo" || "hexo";
-    var ROOT = "/" || "/";
-    if (!ROOT.endsWith('/')) ROOT += '/';
-  </script>
-
-
-  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
-
-
-
-  
-<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
-
-  <script type="text/javascript">
-    $(function() {
-      Waves.attach('.flat-btn', ['waves-button']);
-      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
-      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
-      Waves.attach('.flat-box', ['waves-block']);
-      Waves.attach('.float-box', ['waves-block', 'waves-float']);
-      Waves.attach('.waves-image');
-      Waves.init();
-    });
-  </script>
-
-
-  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
-
-
-
-  
-  
-  
-    
-<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
-
-    <script type="text/javascript">
-      $(function(){
-        var imgs=["https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/41F215B9-261F-48B4-80B5-4E86E165259E.jpeg"];
-        if ('true' == 'true') {
-          function shuffle(arr){
-            /*From countercurrent-time*/
-            var n = arr.length;
-            while(n--) {
-              var index = Math.floor(Math.random() * n);
-              var temp = arr[index];
-              arr[index] = arr[n];
-              arr[n] = temp;
-            }
-          }
-          shuffle(imgs);
-        }
-        if ('.cover') {
-          $('.cover').backstretch(
-            imgs,
-          {
-            duration: "20000",
-            fade: "1500"
-          });
-        } else {
-          $.backstretch(
-            imgs,
-          {
-            duration: "20000",
-            fade: "1500"
-          });
-        }
-      });
-    </script>
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-<script src="/js/app.js"></script>
-
-
-
-  
-<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.4/js/search.js"></script>
-
-
-
-  
-<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
-
-
-
-<!-- 复制 -->
-
-  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
-<script>
-  !function (e, t, a) {
-    var initCopyCode = function(){
-      var copyHtml = '';
-      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
-      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
-      copyHtml += '</button>';
-      $(".highlight .code pre").before(copyHtml);
-      var clipboard = new ClipboardJS('.btn-copy', {
-        target: function(trigger) {
-          return trigger.nextElementSibling;
-        }
-      });
-      clipboard.on('success', function(e) {
-        let $btn = $(e.trigger);
-        $btn.addClass('copied');
-        let $icon = $($btn.find('i'));
-        $icon.removeClass('fa-copy');
-        $icon.addClass('fa-clipboard-check');
-        let $span = $($btn.find('span'));
-        $span[0].innerText = 'COPIED';
-      });
-      clipboard.on('error', function(e) {
-        e.clearSelection();
-        let $btn = $(e.trigger);
-        $btn.addClass('copy-failed');
-        let $icon = $($btn.find('i'));
-        $icon.removeClass('fa-copy');
-        $icon.addClass('fa-exclamation-triangle');
-        let $span = $($btn.find('span'));
-        $span[0].innerText = 'COPY FAILED';
-      });
-    }
-    initCopyCode();
-  }(window, document);
-</script>
-
-
-
-
-<!-- fancybox -->
-
-  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-<script>
-  let LAZY_LOAD_IMAGE = "";
-  $(".article-entry").find("div.fancybox").find("img").each(function () {
-      var element = document.createElement("a");
-      $(element).attr("data-fancybox", "gallery");
-      $(element).attr("href", $(this).attr("src"));
-      /* 图片采用懒加载处理时,
-       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
-       * 那么此处将原本的属性名src替换为对应属性名data-original,
-       * 修改如下
-       */
-       if (LAZY_LOAD_IMAGE) {
-         $(element).attr("href", $(this).attr("data-original"));
-       }
-      $(this).wrap(element);
-  });
-</script>
-
-
-
-
-
-
-  <script>setLoadingBarProgress(100);</script>
-</body>
-</html>
+window.valine = new Valine({
+  el:'#vcomment',
+  appId: 'Oiy0LtDuJqmX0syC9VKS89Wq-MdYXbMMI# leancloud application app id',
+  appKey: 'wy0V7recMNGgjaENqjtXhoke',
+  placeholder: 'Please leave your footprints',
+  avatar: 'monsterid',
+  meta: guest_info,
+  pageSize: '10',
+  lang: 'zh-CN',
+  recordIP: false,
+  serverURLs: '',
+  mathjax: false
+});</script></div></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="https://cdn.jsdelivr.net/gh/TCPGNL/my-storage/img/favicon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">TCPGNL</div><div class="author-info__description">在历史的层林尽染中书写时代的年华!</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives"><div class="headline">文章</div><div class="length_num">28</div></a></div><div class="card-info-data-item is-center">      <a href="/tags"><div class="headline">标签</div><div class="length_num">14</div></a></div><div class="card-info-data-item is-center">     <a href="/categories"><div class="headline">分类</div><div class="length_num">13</div></a></div></div><div class="card-info-bookmark is-center"><a class="bookmark button--primary button--animated" id="bookmark-it" href="javascript:;" title="加入书签" target="_self"><i class="fa fa-bookmark" aria-hidden="true"></i><span>加入书签</span></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="http://twitter.com/tcpgnl" target="_blank" title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a><a class="social-icon" href="https://github.com/tcpgnl" target="_blank" title="Github"><i class="fa fa-github" aria-hidden="true"></i></a><a class="social-icon" href="mailto:i@tcpgnl.com" target="_blank" title="Email"><i class="fa fa-envelope" aria-hidden="true"></i></a><a class="social-icon" href="/feed.xml" target="_blank" title="RSS"><i class="fa fa-rss" aria-hidden="true"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fa fa-bullhorn card-announcement-animation" aria-hidden="true"></i><span>公告</span></div><div class="announcement_content">这是TCPGNL的博客,推荐以绝对自由,绝对批判的角度浏览,如有错误还望指正.</div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fa fa-history" aria-hidden="true"></i><span>最新文章</span></div><div class="aside-recent-item"><div class="aside-recent-post"><a href="/bug-note.html"><div class="aside-post-cover"><img class="aside-post-bg lazyload" data-src="/img/post.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="bug集合" alt="bug集合"/></div><div class="aside-post-title"><div class="aside-post_title" href="/bug-note.html" title="bug集合">bug集合</div><time class="aside-post_meta post-meta__date" title="发表于 2020-04-12 15:23:44">2020-04-12</time></div></a></div><div class="aside-recent-post"><a href="/self-build-bitwarden.html"><div class="aside-post-cover"><img class="aside-post-bg lazyload" data-src="https://cdn.jsdelivr.net/gh/TCPGNL/my-storage/img/Bitwarden_img.png" onerror="this.onerror=null;this.src='/img/404.jpg'" title="自建密码管理软件bitwarden" alt="自建密码管理软件bitwarden"/></div><div class="aside-post-title"><div class="aside-post_title" href="/self-build-bitwarden.html" title="自建密码管理软件bitwarden">自建密码管理软件bitwarden</div><time class="aside-post_meta post-meta__date" title="发表于 2020-04-06 00:07:10">2020-04-06</time></div></a></div><div class="aside-recent-post"><a href="/install-bt.html"><div class="aside-post-cover"><img class="aside-post-bg lazyload" data-src="/img/post.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="宝塔面板搭建流程" alt="宝塔面板搭建流程"/></div><div class="aside-post-title"><div class="aside-post_title" href="/install-bt.html" title="宝塔面板搭建流程">宝塔面板搭建流程</div><time class="aside-post_meta post-meta__date" title="发表于 2020-04-03 22:45:20">2020-04-03</time></div></a></div><div class="aside-recent-post"><a href="/springboot-jpa.html"><div class="aside-post-cover"><img class="aside-post-bg lazyload" data-src="/img/post.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="Springboot后端的JPA实现" alt="Springboot后端的JPA实现"/></div><div class="aside-post-title"><div class="aside-post_title" href="/springboot-jpa.html" title="Springboot后端的JPA实现">Springboot后端的JPA实现</div><time class="aside-post_meta post-meta__date" title="发表于 2020-04-03 00:19:36">2020-04-03</time></div></a></div><div class="aside-recent-post"><a href="/bilibili-up-think.html"><div class="aside-post-cover"><img class="aside-post-bg lazyload" data-src="/img/post.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="bilibili up主感想" alt="bilibili up主感想"/></div><div class="aside-post-title"><div class="aside-post_title" href="/bilibili-up-think.html" title="bilibili up主感想">bilibili up主感想</div><time class="aside-post_meta post-meta__date" title="发表于 2020-03-10 18:58:35">2020-03-10</time></div></a></div></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fa fa-folder-open" aria-hidden="true"></i><span>分类</span></div><ul class="aside-category-list">
+            <li class="aside-category-list-item"><a class="aside-category-list-link" href="/categories/Docker/"><span class="aside-category-list-name">Docker</span><span class="aside-category-list-count">3</span></a></li><ul class="aside-category-list child"><li class="aside-category-list-item"><a class="aside-category-list-link" href="/categories/Docker/Java/"><span class="aside-category-list-name">Java</span><span class="aside-category-list-count">1</span></a></li><ul class="aside-category-list child"><li class="aside-category-list-item"><a class="aside-category-list-link" href="/categories/Docker/Java/SpringBoot/"><span class="aside-category-list-name">SpringBoot</span><span class="aside-category-list-count">1</span></a></li></ul></ul><li class="aside-category-list-item"><a class="aside-category-list-link" href="/categories/Java/"><span class="aside-category-list-name">Java</span><span class="aside-category-list-count">6</span></a></li><ul class="aside-category-list child"><li class="aside-category-list-item"><a class="aside-category-list-link" href="/categories/Java/SpringBoot/"><span class="aside-category-list-name">SpringBoot</span><span class="aside-category-list-count">5</span></a></li><ul class="aside-category-list child"><li class="aside-category-list-item"><a class="aside-category-list-link" href="/categories/Java/SpringBoot/%E6%9C%AA%E5%88%86%E7%B1%BB/"><span class="aside-category-list-name">未分类</span><span class="aside-category-list-count">1</span></a></li></ul></ul><li class="aside-category-list-item"><a class="aside-category-list-link" href="/categories/%E4%BB%A3%E7%A0%81/"><span class="aside-category-list-name">代码</span><span class="aside-category-list-count">2</span></a></li><li class="aside-category-list-item"><a class="aside-category-list-link" href="/categories/%E5%B9%B4%E5%BA%A6%E6%8A%A5%E5%91%8A/"><span class="aside-category-list-name">年度报告</span><span class="aside-category-list-count">1</span></a></li>
+            <li class="aside-category-list-item is-center"><a class="aside-category-list-item-more" href="/categories" >查看更多</a></li>           
+            </ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fa fa-tags" aria-hidden="true"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/API/" style="font-size: 16px; color: #999">API</a> <a href="/tags/Bitnami/" style="font-size: 16px; color: #999">Bitnami</a> <a href="/tags/Docker/" style="font-size: 20px; color: #99a1ac">Docker</a> <a href="/tags/Docker-Java-SpringBoot/" style="font-size: 16px; color: #999">Docker,Java,SpringBoot</a> <a href="/tags/JPA/" style="font-size: 16px; color: #999">JPA</a> <a href="/tags/Java/" style="font-size: 24px; color: #99a9bf">Java</a> <a href="/tags/Spring/" style="font-size: 20px; color: #99a1ac">Spring</a> <a href="/tags/SpringBoot/" style="font-size: 24px; color: #99a9bf">SpringBoot</a> <a href="/tags/bitwarden/" style="font-size: 16px; color: #999">bitwarden</a> <a href="/tags/cURL/" style="font-size: 16px; color: #999">cURL</a> <a href="/tags/telegram/" style="font-size: 16px; color: #999">telegram</a> <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 16px; color: #999">博客</a> <a href="/tags/%E5%AE%89%E5%85%A8/" style="font-size: 16px; color: #999">安全</a> <a href="/tags/%E8%87%AA%E5%BB%BA/" style="font-size: 16px; color: #999">自建</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fa fa-archive" aria-hidden="true"></i><span>归档</span></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/"><span class="archive-list-date">四月 2020</span><span class="archive-list-count">4</span></a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/"><span class="archive-list-date">三月 2020</span><span class="archive-list-count">10</span></a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/"><span class="archive-list-date">二月 2020</span><span class="archive-list-count">3</span></a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/"><span class="archive-list-date">一月 2020</span><span class="archive-list-count">2</span></a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/"><span class="archive-list-date">十二月 2019</span><span class="archive-list-count">6</span></a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/"><span class="archive-list-date">九月 2019</span><span class="archive-list-count">3</span></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fa fa-line-chart" aria-hidden="true"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="webinfo-article-name">文章数目 :</div><div class="webinfo-article-count">28</div></div><div class="webinfo-item"><div class="webinfo-runtime-name">已运行时间 :</div><div class="webinfo-runtime-count" id="webinfo-runtime-count" start_date="9/10/2019 00:00:00">     </div></div><div class="webinfo-item">      <div class="webinfo-site-uv-name">本站访客数 :</div><div class="webinfo-site-uv-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="webinfo-site-name">本站总访问量 :</div><div class="webinfo-site-pv-count" id="busuanzi_value_site_pv"></div></div></div></div></div></div></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2020 By TCPGNL</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="简繁转换" target="_self">繁</a><i class="darkmode fa fa-moon-o" id="darkmode" title="夜间模式"></i></div><div id="rightside-config-show"><div id="rightside_config" title="设置"><i class="fa fa-cog" aria-hidden="true"></i></div><i class="fa fa-arrow-up" id="go-up" title="回到顶部" aria-hidden="true"></i></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="/js/third-party/activate-power-mode.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@latest/lazysizes.min.js" async=""></script><script src="/js/search/local-search.js"></script></body></html>
